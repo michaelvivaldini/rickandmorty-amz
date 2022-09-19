@@ -21,7 +21,7 @@
                     'Content-Type': 'application/json'
                 }
             });
-            const respostaEmJson = await resposta.json(); //extract JSON from the http response
+            const respostaEmJson = await resposta.json();
             const episodios = respostaEmJson.results;
             document.querySelector('.resultado').textContent = "Episódios encontrados: "+episodios.length;
             console.table(episodios);
