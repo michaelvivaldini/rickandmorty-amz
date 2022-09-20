@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RickAndMorty - AMZ</title>
+    <title>RickAndMorty = AMZ</title>
 </head>
-
 <body>
-    <h1>Teste buscando episódios</h1>
-    <span class="resultado"></span>
-    <br>
-    <button class="buscarEpisodios">Buscar episódios</button>
-    <script>
-        document.querySelector('.buscarEpisodios').onclick = async function () {
-            const resposta = await fetch('https://rickandmortyapi.com/api/episode', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            const respostaEmJson = await resposta.json();
-            const episodios = respostaEmJson.results;
-            document.querySelector('.resultado').textContent = "Episódios encontrados: "+episodios.length;
-            console.table(episodios);
-        }
-    </script>
+    
 </body>
-
 </html>
