@@ -8,18 +8,19 @@ async function getEpisodes() {
     const respostaEmJson = await resposta.json();
     const episodios = respostaEmJson.results;
     var episodiosListaHtml = '';
-    episodios.forEach(episodio => {
+    const lastEpisodes = episodios.slice(0,4);
+    lastEpisodes.forEach(episodio => {
         const html = `
-        <li>
-            <div><img src="https://rickandmortyapi.com/api/character/avatar/${episodio.id}.jpeg" alt="EP1"></div>
-            <div>
-                <h2>
+        <li class = 'card'>
+            <div class= 'card-img'><img src="https://rickandmortyapi.com/api/character/avatar/${episodio.id}.jpeg" alt="EP1"></div>
+            <div class= 'card-details'>
+                <h2 class='episode'>
                     ${episodio.episode}
                 </h2>
                 <span>
                     ${episodio.name}
                 </span>
-                <span>
+                <span class='air-date'>
                     ${episodio.air_date}
                 </span>
                 <div>
